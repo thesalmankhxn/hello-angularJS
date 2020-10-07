@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myBBApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/content/css/style.css">
+    <script src="app/lib/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-init="bb=['Kai', 'Tyson', 'Ray', 'Max']">
+    <h1>Hello AngularJS</h1>
+    <input type="text" ng-model="name" placeholder="enter your name mister">
+    <p>{{name}}</p>
+
+    <ul>
+        <li ng-repeat="b in bb">{{b}}</li>
+    </ul>
+
+    <script src="app/app.js"></script>
+</body>
+</html>
