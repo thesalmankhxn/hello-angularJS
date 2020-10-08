@@ -1,21 +1,29 @@
 var myBBApp = angular.module('myBBApp', []);
 
-myBBApp.config(function(){
+myBBApp.config(function () {
 
 });
 
-var MainController = function($scope, $http){
+(function () {
 
-    var onUserComplete = function(response) {
-        $scope.user = response.data;
+    var app = angular.module("gitViewer", []);
+
+    var MainController = function ($scope, $http) {
+
+        var onUserComplete = function (response) {
+            $scope.user = response.data;
+        };
+
+        var onError = function (err) {
+            $scope.error = "Could not retrieve data from the api"
+        };
+
+        $http.get("https://api.github.com/users/iamSK77")
+            .then(onUserComplete, onError);
+
+        $scope.message = "Hello, AngularJS!";
     };
 
-    var onError = function(err) {
-        $scope.error = "Could not retrieve data from the api"
-    };
+    app.controller("MainController", MainController);
 
-    $http.get("https://api.github.com/users/iamSK77")
-        .then(onUserComplete, onError);
-
-    $scope.message = "Hello, AngularJS!";
-};
+}());
