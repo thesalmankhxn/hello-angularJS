@@ -16,6 +16,23 @@
         <li ng-repeat="b in bb">{{b}}</li>
     </ul>
 
+    <div ng-controller="MainController">
+        {{message}}
+
+        <div>
+            {{error}}
+        </div>
+        <div>
+            Name: {{user.name}}
+        </div>
+        <div>
+            Location: {{user.location}}
+        </div>
+        <div>
+            <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
+        </div>
+    </div>
+
     <script src="app/app.js"></script>
 </body>
 </html>
