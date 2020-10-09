@@ -24,6 +24,14 @@ myBBApp.config(function () {
         $scope.message = "Hello, AngularJS!";
     };
 
-    app.controller("MainController", MainController);
+    app.controller("MainController", [ '$scope', '$http', MainController]);
 
 }());
+
+var myNinjaApp = angular.module('myNinjaApp', []);
+
+myNinjaApp.controller('NinjaController', ['$scope', function($scope){
+
+    $scope.ninjas = ['yoshi', 'crystal', 'ryu', 'shawn'];
+    
+}]);

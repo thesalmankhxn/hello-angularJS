@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/content/css/style.css">
     <script src="app/lib/angular.min.js"></script>
+    <script src="app/app.js"></script>
     <title>Document</title>
 </head>
 <body ng-init="bb=['Kai', 'Tyson', 'Ray', 'Max']">
@@ -33,6 +34,14 @@
         </div>
     </div>
 
-    <script src="app/app.js"></script>
+    <div ng-app="myNinjaApp">
+        <div ng-controller="NinjaController">
+            <ul>
+                <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+            </ul>
+        </div>
+    </div>
+
+    
 </body>
 </html>
